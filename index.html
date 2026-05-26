@@ -1,38 +1,243 @@
-import { useState, useEffect } from "react";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Achievements from "./components/Achievements";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Skills from "./components/Skills";
-import Certifications from "./components/Certifications";
-import Languages from "./components/Languages";
-import Contact from "./components/Contact";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabeena K | Portfolio</title>
 
-export default function App() {
-  const [scrollY, setScrollY] = useState(0);
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    body{
+      background:#f4f7fb;
+      color:#333;
+      line-height:1.6;
+    }
 
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased">
-      <Navbar scrollY={scrollY} />
-      <Hero />
-      <About />
-      <Achievements />
-      <Experience />
-      <Education />
-      <Skills />
-      <Certifications />
-      <Languages />
-      <Contact />
-      <Footer />
+    header{
+      background:linear-gradient(135deg,#1e3c72,#2a5298);
+      color:white;
+      padding:50px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:18px;
+      opacity:0.95;
+    }
+
+    .contact{
+      margin-top:15px;
+      font-size:15px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:40px auto;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      margin-bottom:25px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      color:#1e3c72;
+      margin-bottom:15px;
+      border-bottom:2px solid #eaeaea;
+      padding-bottom:8px;
+    }
+
+    ul{
+      margin-left:20px;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .skill{
+      background:#2a5298;
+      color:white;
+      padding:10px 16px;
+      border-radius:20px;
+      font-size:14px;
+    }
+
+    .experience-item,
+    .education-item{
+      margin-bottom:20px;
+    }
+
+    .experience-item h3,
+    .education-item h3{
+      color:#222;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#1e3c72;
+      color:white;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:32px;
+      }
+
+      .skills{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Sabeena K</h1>
+    <p>Assistant Professor | Commerce Education | Student Mentoring</p>
+
+    <div class="contact">
+      📞 +91 8590543325 <br/>
+      📧 sabeenaakbar06@gmail.com <br/>
+      📍 Palakkad, Kerala, India
     </div>
-  );
-}
+  </header>
+
+  <div class="container">
+
+    <!-- Summary -->
+    <div class="card">
+      <h2>Professional Summary</h2>
+      <p>
+        Experienced Assistant Professor with over 10 years in commerce education,
+        specializing in classroom management, curriculum development, and student mentoring.
+        UGC-NET and SET qualified professional with a proven record of improving student
+        performance through innovative teaching methods and structured academic guidance.
+      </p>
+    </div>
+
+    <!-- Achievements -->
+    <div class="card">
+      <h2>Key Achievements</h2>
+
+      <ul>
+        <li>Improved student pass rate by implementing innovative teaching strategies.</li>
+        <li>Mentored over 50 students, with 90% progressing to advanced programs.</li>
+        <li>Guided 25 student research projects annually.</li>
+      </ul>
+    </div>
+
+    <!-- Experience -->
+    <div class="card">
+      <h2>Experience</h2>
+
+      <div class="experience-item">
+        <h3>Assistant Professor</h3>
+        <p><strong>The Elegant Arts and Science College</strong></p>
+        <p>August 2015 – Present | Palakkad, Kerala</p>
+
+        <ul>
+          <li>Advised 25 student research projects annually.</li>
+          <li>Implemented innovative teaching strategies increasing pass rates by 15%.</li>
+          <li>Prepared structured lesson plans and assessments.</li>
+          <li>Mentored students for academic and career growth.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="card">
+      <h2>Education</h2>
+
+      <div class="education-item">
+        <h3>MBA</h3>
+        <p>Bharathiar University | 2016 – 2018</p>
+        <p>Score: 65%</p>
+      </div>
+
+      <div class="education-item">
+        <h3>M.Com</h3>
+        <p>University of Calicut | 2012 – 2015</p>
+        <p>Score: 60%</p>
+      </div>
+
+      <div class="education-item">
+        <h3>B.Com</h3>
+        <p>University of Calicut | 2009 – 2012</p>
+        <p>Score: 68%</p>
+      </div>
+
+      <div class="education-item">
+        <h3>PGDCA</h3>
+        <p>Post Graduate Diploma in Computer Application | 2012 – 2013</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Computer Teacher Training Course</h3>
+        <p>Certificate Course in Teaching Competency | 2012 – 2013</p>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="card">
+      <h2>Certifications</h2>
+
+      <ul>
+        <li>UGC-NET Qualified</li>
+        <li>SET Qualified</li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="card">
+      <h2>Skills</h2>
+
+      <div class="skills">
+        <div class="skill">Classroom Management</div>
+        <div class="skill">Lesson Planning</div>
+        <div class="skill">Student Mentoring</div>
+        <div class="skill">Communication Skills</div>
+        <div class="skill">Adaptability</div>
+        <div class="skill">Assessment & Evaluation</div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="card">
+      <h2>Languages</h2>
+
+      <ul>
+        <li>English – Advanced</li>
+        <li>Hindi – Advanced</li>
+        <li>Tamil – Advanced</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Sabeena K | Academic Portfolio
+  </footer>
+
+</body>
+</html>
